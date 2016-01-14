@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script>
+	function validatesignup() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+<div class="container">
+  <h2>Task Manager</h2>            
+	<form action = "" onsubmit="return validatesignup()" method = "post">
+		<div class="form-group">
+			<label for = "name">{{useridLabel}}</label>
+			<input type = "text" class="form-control" id="username">
+			<label for = "name">First Name:</label>
+			<input type = "text" class="form-control" id="firstname">
+			<label for = "name">Last Name:</label>
+			<input type = "text" class="form-control" id="lastname">
+			<label for = "email">Email:</label>
+			<input type = "email" class="form-control" id="email">
+			<label for = "pwd">{{passwordLabel}}</label>
+			<input type = "password" class="form-control" id="password">
+			<br>
+			<button type="button" class ="btn btn-primary active">Submit</button>
+		</div>
+	</form>
+	
+</body>
+</html>
