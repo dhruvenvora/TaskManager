@@ -16,10 +16,11 @@
 <body>
 <div class="container">
   <h2>Task Manager</h2>            
-	<form action = "" onsubmit="return validatesignup()" method = "post">
+	<form action = "{% url 'Auth:details' %}" onsubmit="return validatesignup()" method = "post">
+		{% csrf_token %}
 		<div class="form-group">
 			<label for = "name">{{useridLabel}}</label>
-			<input type = "text" class="form-control" id="username">
+			<input type = "text" class="form-control" id="username" name="username">
 			<label for = "name">First Name:</label>
 			<input type = "text" class="form-control" id="firstname">
 			<label for = "name">Last Name:</label>
@@ -29,7 +30,7 @@
 			<label for = "pwd">{{passwordLabel}}</label>
 			<input type = "password" class="form-control" id="password">
 			<br>
-			<button type="button" class ="btn btn-primary active">Submit</button>
+			<button type="submit" class ="btn btn-primary active">Submit</button>
 		</div>
 	</form>
 	

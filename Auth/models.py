@@ -9,7 +9,7 @@ class Authentication(models.Model):
 		return self.userid
 
 class Users(models.Model):
-	userid = models.CharField(max_length = 100) #primary key
+	userid = models.CharField(max_length = 100, primary_key=True) #primary key
 	name = models.CharField(max_length = 100)
 	email = models.CharField(max_length = 100)
 	contact = models.CharField(max_length = 12)
