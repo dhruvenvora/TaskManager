@@ -6,11 +6,7 @@ from django.core.urlresolvers import reverse
 
 # Create your views here.
 def index(request,isRedirect):
-	if isRedirect =='':
-		context = RequestContext(request, {'useridLabel':'Username:', 'passwordLabel':'Password:'})
-		return render(request, 'Auth/index.html', context)	
-	else:
-		context = RequestContext(request, {'useridLabel':'Username:', 'passwordLabel':'Password:', 'type':type(isRedirect)})
+		context = RequestContext(request, {'useridLabel':'Username:', 'passwordLabel':'Password:', 'type':isRedirect})
 		return render(request, 'Auth/index.html', context)
 
 def details(request):
@@ -21,11 +17,12 @@ def details(request):
 	email = request.POST['email']
 	passwrd = request.POST['password']
 	user = Users(userid,name,email,'1234','dhaval.jpg')
-	#user.save()
+	value = None
 	try:
 		value = Users.objects.get(pk=userid)
 	except Users.DoesNotExist:
-		return HttpResponse("Hello %s" % value)	
+		user.save()
+		return HttpResponse("Hello %s" % user)	
 	else:
-		return HttpResponseRedirect(reverse('Auth:index',args = ('True',)))
+		return HttpResponseRedirect(reverse('Auth:index',args = ['True',]))
 	
