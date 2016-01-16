@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>dashboard</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+	<div class="navbar navbar-default navbar-fixed-top">
+		{% csrf_token %}
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <a class="navbar-brand" href="" style="font-family: exotic;font-size:26px;">Dashboard</a>
+	          	<ul class="unstyled" style="float:right;">
+				  <div class="dropdown">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">{{userid}}<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="../Auth/index.html">Logout</a></li>
+						<li class="divider"></li>
+						<li><a href="../erp/index.html">Change Password</a></li>
+						<li><a href="../erp/index.html">Help</a></li>
+					</ul>
+				  </div>
+			  </ul>
+	        </div>
+	      </div>
+	</div>
+	
+	<div class="container-fluid" style="padding-top:100px;padding-bottom: 55px;">
+		<div class="row">
+			
+			<div class = "col-md-2">
+	
+			</div>
+	
+			<form action = "{% url 'Auth:details' %}" onsubmit="return validatesignup()" method = "post">
+			
+			<div class = "col-md-8">
+				<div class="panel panel-default">
+					<input type="submit" style="margin-left:92%" class ="btn btn-primary active" value = "Add Task">
+				</div>
+				<div class="alert alert-info" role="alert"><p><strong>So far there are no new tasks!!!</strong></p></div>
+			</div>
+			</form>
+	
+	
+	
+			<div class = "col-md-2">
+				<p><strong style="color:Blue">Filter</p>
+				<input type="text" id = "filter" name="sort">
+			</div>
+		
+		</div>	
+	</div>
+	</body>
+</html>

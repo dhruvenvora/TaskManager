@@ -5,8 +5,8 @@ from . models import Users
 from django.core.urlresolvers import reverse
 
 # Create your views here.
-def index(request,isRedirect):
-		context = RequestContext(request, {'useridLabel':'Username:', 'passwordLabel':'Password:', 'type':isRedirect})
+def index(request):
+		context = RequestContext(request, {'useridLabel':'Username:', 'passwordLabel':'Password:'})
 		return render(request, 'Auth/index.html', context)
 
 def details(request):
@@ -17,12 +17,12 @@ def details(request):
 	email = request.POST['email']
 	passwrd = request.POST['password']
 	user = Users(userid,name,email,'1234','dhaval.jpg')
-	value = None
+	value= None
 	try:
 		value = Users.objects.get(pk=userid)
 	except Users.DoesNotExist:
 		user.save()
-		return HttpResponse("Hello %s" % user)	
+		context = RequestContext(request, {'userid':user.name})
+		return render(request, 'Auth/details.html',context)	
 	else:
-		return HttpResponseRedirect(reverse('Auth:index',args = ['True',]))
-	
+		return HttpResponseRedirect(reverse('Auth:index'))
