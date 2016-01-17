@@ -10,8 +10,7 @@ def index(request):
 	return render(request, 'Auth/index.html', context)
 		
 def login(request):
-	context = RequestContext(request)
-	return render(request, 'Auth/login.html', context)
+	return render(request, 'Auth/login.html')
 
 def details(request):
 	referer_url = request.META.get('HTTP_REFERER') #HTTP_REFERER contains the URL of the calling view.
