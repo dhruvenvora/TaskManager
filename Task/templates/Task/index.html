@@ -1,0 +1,28 @@
+{% extends "Task/base.html" %}
+{% block main_content %}
+		<div class="row">
+			
+			<div class = "col-md-2">
+	
+			</div>
+	
+			<form action = "{% url 'Auth:details' %}" onsubmit="return validatesignup()" method = "post">
+			
+			<div class = "col-md-8">
+				<div class="panel panel-default">
+					<input type="submit" style="margin-left:92%" class ="btn btn-primary active" value = "Add Task">
+				</div>
+				<div class="alert alert-info" role="alert"><p><strong>So far there are no new tasks!!!</strong></p></div>
+			</div>
+			</form>
+	
+	
+	
+			<div class = "col-md-2">
+				<p><strong style="color:Blue">Filter</p>
+				<input type="text" id = "filter" name="sort">
+			</div>
+		
+		</div>
+{% endblock %}
+
