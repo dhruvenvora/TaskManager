@@ -1,0 +1,25 @@
+{% extends "Auth/base.html" %}
+{% block main_content %}
+		  <div class="row-fluid">
+		    <div class="col-md-2">
+		      This is span 2
+		    </div>
+		    <div class="col-md-8">
+		      <h2>Login</h2>            
+				<form action = "{% url 'Auth:details' %}" onsubmit="return validatesignup()" method = "post">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for = "name">Username:</label>
+						<input type = "text" class="form-control" id="username" name="username">
+						<label for = "pwd">Password:</label>
+						<input type = "password" class="form-control" id="password" name ="password">
+						<br>
+						<input type="submit" class ="btn btn-primary active" value = "Login">
+					</div>
+				</form>
+		    </div>
+		    <div class="col-md-2">
+		      This is span 2
+		    </div>
+		  </div>
+{% endblock %}

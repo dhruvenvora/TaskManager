@@ -6,7 +6,7 @@
 		      This is span 2
 		    </div>
 		    <div class="col-md-8">
-		      <h2>Task Manager</h2>            
+		      <h2>Signup</h2>            
 				<form action = "{% url 'Auth:details' %}" onsubmit="return validatesignup()" method = "post">
 					{% csrf_token %}
 					<div class="form-group">
@@ -18,9 +18,10 @@
 						<input type = "text" class="form-control" id="lastname" name = "lastname">
 						<label for = "email">Email:</label>
 						<input type = "email" class="form-control" id="email" name = "email">
+						<label for = "email">Phone:</label>
+						<input type = "text" class="form-control" id="phone" name = "phone">
 						<label for = "pwd">{{passwordLabel}}</label>
 						<input type = "password" class="form-control" id="password" name ="password">
-						<p>type = {{type}}</p>
 						<br>
 						<input type="submit" class ="btn btn-primary active" value = "Sign up">
 					</div>
