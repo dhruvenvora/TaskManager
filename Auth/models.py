@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Authentication(models.Model):
-	userid = models.CharField(max_length = 100) #primary key
+	userid = models.CharField(max_length = 100, primary_key=True) #primary key
 	password = models.CharField(max_length = 100)
 
 	def __str__(self):
