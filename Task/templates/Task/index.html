@@ -5,24 +5,18 @@
 			<div class = "col-md-2">
 	
 			</div>
-	
-			<form action = "{% url 'Auth:details' %}" onsubmit="return validatesignup()" method = "post">
-			
 			<div class = "col-md-8">
 				<div class="panel panel-default">
-					<input type="submit" style="margin-left:92%" class ="btn btn-primary active" value = "Add Task">
+					<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="margin-left:92%">Add Task</button>
 				</div>
 				<div class="alert alert-info" role="alert"><p><strong>So far there are no new tasks!!!</strong></p></div>
 			</div>
-			</form>
-	
-	
-	
 			<div class = "col-md-2">
 				<p><strong style="color:Blue">Filter</p>
 				<input type="text" id = "filter" name="sort">
 			</div>
-		
+			<!-- Including the modal for AddTask form -->
+			{% include "Task/addtask.html" %}			
 		</div>
 {% endblock %}
 
