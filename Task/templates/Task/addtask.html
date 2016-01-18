@@ -10,24 +10,24 @@
 		  <div class="modal-body">
 			  <div class="form-group">
 				<label for="title" class="col-sm-2 control-label">Title</label>
-				<div class="col-sm-10"><input type="text" class="form-control" id="title"></div>
+				<div class="col-sm-10"><input type="text" class="form-control" id="title" name = "title"></div>
 			  </div>
 			  <div class="form-group">
-				<label for="description" class="col-sm-2 control-label">Description</label>
-				<div class="col-sm-10"><textarea class="form-control" id="description" rows="3"></textarea></div>
+				<label for="description" class="col-sm-2 control-label" >Description</label>
+				<div class="col-sm-10"><textarea class="form-control" id="description" rows="3" name = "description"></textarea></div>
 			  </div>
 			  <div class="form-group">
 				<label for="start_date" class="col-sm-2 control-label">Start Date</label>
-				<div class="col-sm-10"><input type="date" class="form-control" id="start_date"></div>
+				<div class="col-sm-10"><input type="date" class="form-control" id="start_date" name="start_date"></div>
 			  </div>
 			  <div class="form-group">
 				<label for="due_date" class="col-sm-2 control-label">Due Date</label>
-				<div class="col-sm-10"><input type="date" class="form-control" id="due_date"></div>
+				<div class="col-sm-10"><input type="date" class="form-control" id="due_date" name="due_date"></div>
 			  </div>
 			  <div class="form-group">
 				<label for="time_counter" class="col-sm-2 control-label">Set Reminder Before</label>
 				<div class="col-sm-10">
-					<input type="number" class="form-control" id="time_counter">
+					<input type="number" class="form-control" id="time_counter" name="time_counter">
 					<select class="form-control" id="time_span">
 					  <option>Hours</option>
 					  <option>Days</option>
@@ -35,7 +35,7 @@
 			  </div>
 			  <div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-				  <div class="checkbox"><label><input type="checkbox" id="repeat_checkbox" onchange="toggle_repeat_form()" checked="true">Repeat</label></div>
+				  <div class="checkbox"><label><input type="checkbox" id="repeat_checkbox" name="repeat_checkbox" onchange="toggle_repeat_form()">Repeat</label></div>
 				</div>
 			  </div>
 			  <div class="form-group" id="repeat_form">
