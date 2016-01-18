@@ -8,11 +8,12 @@ from django.utils import timezone
 # Create your views here.
 def index(request, userid):
 	task_list = Tasks.objects.all()
-	context = RequestContext(request, {'userid':userid,'task_list_label':task_list})
+	y = sorted(task_list, key=lambda task: task.start_date, reverse  =True)
+	context = RequestContext(request, {'userid':userid,'task_list_label':y})
 	return render(request, 'Task/index.html', context)
 
 def addtask(request):
-	taskid = timezone.now
+	taskid = timezone.now()
 	title = request.POST['title']
 	description = request.POST['description']
 	x = request.POST['start_date']
