@@ -1,15 +1,28 @@
 {% extends "Task/base.html" %}
 {% block main_content %}
-		<div class="row">
-			
+		<div class="row">			
 			<div class = "col-md-2">
 	
 			</div>
 			<div class = "col-md-8">
 				<div class="panel panel-default">
-					<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="margin-left:92%">Add Task</button>
+					<div class="panel-heading">
+						<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="margin-left:92%">Add Task</button>
+					</div>
+					<div class="panel-body">
+					{% if task_list_label %}
+						<ul class="list-unstyled">
+							{% for task in task_list_label %}
+								<li>
+									<div class="alert alert-info" role="alert"><p><strong>{{task.title}}</strong></p></div>
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+						<div class="alert alert-info" role="alert"><p><strong>So far there are no new tasks!!!</strong></p></div>
+					{% endif %}
+					</div>					
 				</div>
-				<div class="alert alert-info" role="alert"><p><strong>So far there are no new tasks!!!</strong></p></div>
 			</div>
 			<div class = "col-md-2">
 				<p><strong style="color:Blue">Filter</p>
