@@ -5,8 +5,9 @@ from . models import Tasks
 
 
 # Create your views here.
-def index(request):
-	return render(request, 'Task/index.html')
+def index(request, userid):
+	context = RequestContext(request, {'userid':userid})
+	return render(request, 'Task/index.html', context)
 
 def addtask(request):
 	taskid = '12'

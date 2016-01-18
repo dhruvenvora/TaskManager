@@ -21,7 +21,7 @@ def details(request):
 			userAuth = Authentication.objects.get(pk=userid)
 			if(userAuth is not None and userAuth.password == password):
 				#TODO instead of printing the string, redirect the page to Tasks/index
-				return HttpResponseRedirect(reverse('Task:index'))
+				return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':userid}))
 			else:
 				return HttpResponseRedirect(reverse('Auth:login'))
 			
