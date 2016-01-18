@@ -9,18 +9,13 @@ def index(request):
 	return render(request, 'Task/index.html')
 
 def addtask(request):
-	if request.method == 'POST':
-		post_text = request.POST.get('the_post')
-		response_data = {}
-
-		response_data['result'] = 'Create post successful!'
-
-		return HttpResponse(
-			json.dumps(response_data),
-			content_type="application/json"
-		)
-	else:
-		return HttpResponse(
-			json.dumps({"nothing to see": "this isn't happening"}),
-			content_type="application/json"
-		)
+	taskid = '5'
+	title = request.POST['title']
+	description = request.POST['description']
+	start_date = request.POST['start_date']
+	due_date = request.POST['due_date']
+	set_reminder_before = request.POST['time_counter']
+	repeat = request.POST['repeat_checkbox']
+	task = Tasks(taskid,title,description,start_date,due_date,repeat,set_reminder_before)
+	task.save()
+	return HttpResponse('Task added')
