@@ -12,7 +12,7 @@ def index(request, userid):
 	return render(request, 'Task/index.html', context)
 
 def addtask(request):
-	taskid = timezone.now
+	taskid = timezone.now()
 	title = request.POST['title']
 	description = request.POST['description']
 	x = request.POST['start_date']
