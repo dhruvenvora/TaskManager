@@ -2,7 +2,37 @@
 {% block main_content %}
 		<div class="row">			
 			<div class = "col-md-2">
-	
+				<div class="panel">
+						<div class="form-group has-feedback">
+						  <label class="control-label" for="inputGroupSuccess1">Filter by name</label>
+						  <div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+							<input type="text" class="form-control input-sm" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+						  </div>
+						</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Groups</strong>
+					</div>
+					<!--TODO: List group is hardcoded. Need to add the python code to fetch data from DB.-->
+					<ul class="list-group">
+						<li class="list-group-item" style="padding: 5px 15px">Roommates</li>
+						<li class="list-group-item" style="padding: 5px 15px">Hangout</li>
+						<li class="list-group-item" style="padding: 5px 15px">Project XYZ</li>
+					</ul>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Friends</strong>
+					</div>
+					<!--TODO: List group is hardcoded. Need to add the python code to fetch data from DB.-->
+					<ul class="list-group">
+						<li class="list-group-item" style="padding: 5px 15px">user2</li>
+						<li class="list-group-item" style="padding: 5px 15px">user3</li>
+						<li class="list-group-item" style="padding: 5px 15px">user4</li>
+					</ul>
+				</div>
 			</div>
 			<div class = "col-md-8">
 				<div class="panel panel-default">
