@@ -25,11 +25,7 @@ def addtask(request):
 	task.save()
 	return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':request.POST['hidden_userid']}))
 
-def delete(request,taskid):
-	task_list = Tasks.objects.all()
-	for x in task_list:
-		if (x.taskid ==taskid):
-			del x
-			break
-	return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':request.POST['hidden_userid']}))
+def delete(request,userid, taskid):
+	Tasks.objects.filter(id =taskid).delete()
+	return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':userid}))
 	
