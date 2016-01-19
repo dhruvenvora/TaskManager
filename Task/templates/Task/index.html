@@ -7,14 +7,22 @@
 			<div class = "col-md-8">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="margin-left:92%">Add Task</button>
+						<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="margin-left:90%">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Task</button>
 					</div>
 					<div class="panel-body">
 					{% if task_list_label %}
 						<ul class="list-unstyled">
 							{% for task in task_list_label %}
 								<li>
-									<div class="alert alert-info" role="alert"><p><strong>{{task.title}}</strong></p></div>
+									<div class="alert alert-info" role="alert"><span><strong>{{task.title}}</strong></span>
+									<div class = "pull-right">
+									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+									</div>
+									</div>
 								</li>
 							{% endfor %}
 						</ul>
