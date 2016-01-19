@@ -24,3 +24,12 @@ def addtask(request):
 	task = Tasks(title=title,description=description,start_date=start_date,due_date=due_date,repeat=repeat,set_reminder_before=set_reminder_before)
 	task.save()
 	return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':request.POST['hidden_userid']}))
+
+def delete(request,taskid):
+	task_list = Tasks.objects.all()
+	for x in task_list:
+		if (x.taskid ==taskid):
+			del x
+			break
+	return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':request.POST['hidden_userid']}))
+	
