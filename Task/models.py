@@ -6,7 +6,7 @@ from decimal import Decimal
 from django.utils import timezone
 # Create your models here.
 class Tasks(models.Model):
-	taskid = models.CharField(max_length = 100, primary_key=True) #primary key
+	#taskid = models.CharField(max_length = 100, primary_key=True) #primary key
 	title = models.CharField(max_length = 100)
 	description = models.CharField(max_length = 250)
 	start_date = models.DateTimeField(default = timezone.now,blank = True)

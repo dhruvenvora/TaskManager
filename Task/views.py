@@ -13,7 +13,6 @@ def index(request, userid):
 	return render(request, 'Task/index.html', context)
 
 def addtask(request):
-	taskid = timezone.now()
 	title = request.POST['title']
 	description = request.POST['description']
 	x = request.POST['start_date']
@@ -22,6 +21,6 @@ def addtask(request):
 	due_date = y + ' 00:00:00'
 	set_reminder_before = request.POST['time_counter']
 	repeat = request.POST['repeat_checkbox']
-	task = Tasks(taskid,title,description,start_date,due_date,repeat,set_reminder_before)
+	task = Tasks(title=title,description=description,start_date=start_date,due_date=due_date,repeat=repeat,set_reminder_before=set_reminder_before)
 	task.save()
 	return HttpResponseRedirect(reverse('Task:index', kwargs={'userid':request.POST['hidden_userid']}))
